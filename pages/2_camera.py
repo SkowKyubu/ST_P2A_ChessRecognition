@@ -8,6 +8,7 @@ import model_yolo2
 import ChessBoard
 import fonction_annexe
 from streamlit_webrtc import webrtc_streamer
+import av
 # Config
 st.set_page_config(page_title="Reconnaissance : caméra", page_icon=':bar_chart:')
 
@@ -16,7 +17,15 @@ st.title("Reconnaissance de parties d'échec en temps réel")
 # ======================================================================================================================
 
 # ====
-webrtc_streamer(key="sample")
+def video_frame_callback(frame):
+    img = frame.to_ndarray(format="bgr24")
+
+    flipped = img[::-1,:,:] if flip else img
+
+    return av.VideoFrame.from_ndarray(flipped, format="bgr24")
+
+
+webrtc_streamer(key="example", video_frame_callback=video_frame_callback)
 # ====
 
 # Initialisez une variable pour stocker l'état de la case à cocher
