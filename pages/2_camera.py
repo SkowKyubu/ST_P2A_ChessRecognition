@@ -7,7 +7,7 @@ import chess.svg
 import model_yolo2
 import ChessBoard
 import fonction_annexe
-
+from streamlit_webrtc import webrtc_streamer
 # Config
 st.set_page_config(page_title="Reconnaissance : caméra", page_icon=':bar_chart:')
 
@@ -16,8 +16,6 @@ st.title("Reconnaissance de parties d'échec en temps réel")
 # ======================================================================================================================
 
 # ====
-from streamlit_webrtc import webrtc_streamer
-
 webrtc_streamer(key="sample")
 # ====
 
