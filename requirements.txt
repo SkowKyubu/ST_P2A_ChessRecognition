@@ -6,3 +6,7 @@ opencv-python-headless==4.7.0.72
 ultralytics==8.0.51
 shapely==2.0.1
 scikit-learn
+threading
+typing
+av
+streamlit_webrtc
