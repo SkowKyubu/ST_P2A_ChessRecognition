@@ -7,6 +7,7 @@ import chess.svg
 import model_yolo2
 import ChessBoard
 import fonction_annexe
+"""
 import av
 import threading
 from typing import Union
@@ -82,5 +83,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main() """
 
