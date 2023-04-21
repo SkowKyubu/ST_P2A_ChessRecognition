@@ -13,7 +13,6 @@ from typing import Union
 
 from streamlit_webrtc import VideoTransformerBase, webrtc_streamer
 
-"""
 # Config
 st.set_page_config(page_title="Reconnaissance : caméra", page_icon=':bar_chart:')
 
@@ -84,5 +83,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-"""
 
