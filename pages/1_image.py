@@ -5,6 +5,7 @@ import chess.svg
 import model_yolo2
 import ChessBoard
 import fonction_annexe
+from streamlit_image_select import image_select
 
 # Config
 st.set_page_config(page_title="Reconnaissance : images", page_icon=':bar_chart:')
@@ -12,8 +13,15 @@ st.set_page_config(page_title="Reconnaissance : images", page_icon=':bar_chart:'
 # Application title  ===================================================================================================
 st.title("Application de reconnaissance de partie d'échec")
 # ======================================================================================================================
-# Upload image :
-uploaded_file = st.file_uploader("Télécharger une image", type=['jpg', 'jpeg', 'png'])
+type_image = ['Utiliser une image pré-téléchargée','Télécharger une image']
+choix_du_telechargement = st.radio("Télécharger une image :",type_image)
+if choix_du_telechargement== 'Utiliser une image pré-téléchargée':
+    uploaded_file = image_select("Choisir une image pré-téléchargée",
+                       ['ChessBoard/img_test8.png', 'ChessBoard/img_test7.png', 'ChessBoard/img_test9.png'],
+                       return_value="original")
+
+else:
+    uploaded_file = st.file_uploader("Télécharger une image", type=['jpg', 'jpeg', 'png'])
 
 # Define a boolean flag to keep track of the model loading status
 model_loaded = False
@@ -60,5 +68,3 @@ if uploaded_file is not None:
     st.write("##### Analyse de la partie sur Lichess :")
     link = 'https://lichess.org/analysis/standard/' + fen
     st.markdown("Analyse de la partie avec Lichess [link](%s)" % link)
-
-
