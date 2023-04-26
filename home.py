@@ -17,7 +17,7 @@ type_image = ['Utiliser une image pré-téléchargée','Télécharger une image'
 choix_du_telechargement = st.radio("Télécharger une image :",type_image)
 if choix_du_telechargement== 'Utiliser une image pré-téléchargée':
     uploaded_file = image_select("Choisir une image pré-téléchargée",
-                       ['ChessBoard/img_test8.png', 'ChessBoard/img_test7.png', 'ChessBoard/img_test9.png'],
+                       ['img_test8.png', 'img_test7.png', 'img_test9.png'],
                        return_value="original")
 
 else:
