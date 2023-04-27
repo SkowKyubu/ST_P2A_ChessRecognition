@@ -37,7 +37,7 @@ if uploaded_file is not None:
     st.image(image, caption='Image téléchargée.')
 
 else:
-    st.warning("Téléchargez une image pour commencer.")
+    st.warning("Téléchargez une image pour commencer. Attention, chosissez des images similaires à celles proposées dans les images pré-téléchargées.")
 
 if uploaded_file is not None:
     # Load the YOLO model only if it has not been loaded before
